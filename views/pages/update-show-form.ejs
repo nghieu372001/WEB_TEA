@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/alert.css">
+    <link rel="shortcut icon" href="#">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/4.1.4/css/sb-admin-2.css" integrity="sha512-gOfBez3ehpchNxj4TfBZfX1MDLKLRif67tFJNLQSpF13lXM1t9ffMNCbZfZNBfcN2/SaWvOf+7CvIHtQ0Nci2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        #displayImgShow img{
+            width:50%;
+            height:50%;
+        }
+    </style>
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <%- include("../partials/side-bar-admin.ejs"); %>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav
+            class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow justify-content-between px-5"
+          >
+            <h5 class="text-center font-weight-bold text-success">Quản lý lịch diễn</h5>
+          </nav>
+          <!-- End of Topbar -->
+          <h2 style="margin-left:310px">Sửa lịch diễn</h2>
+          <!-- Begin Page Content -->
+          <div class="container-fluid px-5">
+            <div class="row">
+              <div class="col-7">
+                <div class="form-group">
+                  <label for="date">Ngày diễn<span class="text-danger">*</spanc></label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="date"
+                    placeholder="Ngày diễn"
+                    required
+                    value="<%= dateTranfer%>"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="day">Ngày<span class="text-danger">*</spanc></label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="day"
+                    placeholder="Ngày"
+                    required
+                    disabled
+                    value="<%= show.day%>"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="content-show">Chủ đề âm nhạc<span class="text-danger">*</spanc></label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="content-show"
+                    placeholder="Chủ đề âm nhạc"
+                    required
+                    value="<%= show.content%>"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="singer">Ca sĩ <span class="text-danger">*</spanc></label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="singer"
+                    placeholder="Ca sĩ"
+                    required
+                    value="<%= show.singer%>"
+                  />
+                </div>
+              </div>
+              <div class="col-5">
+                <div class="form-group">
+                  <label for="imageShow">Chọn hình ảnh (yêu cầu ảnh phải có kích thước 220x280)* <span class="text-danger">*</spanc></label>
+                  <input
+                    type="file"
+                    class="form-control-file"
+                    id="imageShow"
+                    required
+                  />
+                  <div style="margin-top: 10px;" id="displayImgShow"><img src="/img/shows/<%= show.imageShow%>" alt=""></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- id -->
+            <input id="id" type="text" value="<%= show._id%>" hidden>
+            <!-- id -->
+            <div class="d-flex justify-content-center mt-3">
+              <button class="btn btn-secondary btn-icon-split mr-3">
+                <span class="icon text-white-50">
+                  <i class="fas fa-xmark"></i>
+                </span>
+                <a href="/crud-show-form" style="color:inherit;"><span class="text">Hủy</span></a>
+              </button>
+              <button type="submit" class="btn btn-success btn-icon-split">
+                <span class="icon text-white-50">
+                  <i class="fas fa-save"></i>
+                </span>
+                <span class="text btn-save-show">Lưu</span>
+              </button>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Your Website 2021</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Xóa món ăn</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Bạn có chắc chắn muốn xóa món ăn này?</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Hủy
+            </button>
+            <button type="button" class="btn btn-success">Đồng ý</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/js/bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

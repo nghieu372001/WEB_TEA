@@ -1,0 +1,31 @@
+<header>
+        <a href="#dishes" class="logo">Phòng Trà Không Tên</a>
+        <nav class="navbar">
+            <a class="active" href="#dishes">Đồ Uống</a>
+            <a href="#about">Giới Thiệu</a>
+            <a href="#menu">Lịch Diễn</a>
+            <a href="#order">Đặt Bàn</a>
+            <% if (user && user.role == 'user') {%>
+            <a href="/list-order-user">Lịch Sử Đặt Bàn</a>
+            <%} else if(user && user.role == 'admin') {%>
+            <a href="/crud-menu-form">Quản Lý</a>
+            <%}%>            
+
+        </nav>
+
+    <div class="log">
+        <% if (user) {%>
+            <% if (lastName) {%>
+                <div><a style="color: black;"><span style="font-size:1.7rem ;" class="log-out" >Đăng Xuất</span></a></div>
+                <div style="text-align: center;"><a id="active" href="#" style="color: white;text-align: center;"><span class="name" style="font-size:1.7rem ;background-color:#27ae60;text-transform: none;" title="<%= user.name.split(' ')[user.name.split(' ').length - 1] %>"><%= lastName %></span></a></div>
+            <%} else {%>
+                <div><a style="color: black;"><span style="font-size:1.7rem ;" class="log-out" >Đăng Xuất</span></a></div>
+                <div style="text-align: center;"><a id="active" href="#" style="color: white;text-align: center;"><span class="name" style="font-size:1.7rem ;background-color:#27ae60; text-transform: none;"><%= user.name.split(' ')[user.name.split(' ').length - 1] %></span></a></div>
+            <%} %>   
+        <%} else {%>
+            <div><a href="login" style="color: black;"><span style="font-size:1.7rem;" class="log-in">Đăng Nhập</span></a></div>
+            <div><a href="signup" style="color: black;"><span style="font-size:1.7rem ;" >Đăng Ký</span></a></div>
+        <%};%>
+    </div>
+
+</header>

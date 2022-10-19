@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng Trà Không Tên</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="/css/overview.css">
+    <link rel="stylesheet" href="/css/alert.css">
+
+</head>
+<body>
+    <!-- header section starts      -->
+    <%- include("../partials/header.ejs"); %>
+    <!-- header section ends-->
+
+
+    <section class="dishes" id="dishes">
+        <div><h1 class="heading"> Đồ Uống </h1></div>
+
+        <div class="box-container">
+            <% menus.forEach(menu => { %>
+                <div class="box">
+                    <img src="/img/menus/<%=menu.imageDish %>" alt="">
+                    <h3><%= menu.name %></h3>
+                    <div class="describe">
+                        <p style="font-size: 14px;font-family: 'Nunito', sans-serif;"><%= menu.description%></p>
+                    </div>
+                    <span><%= new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(menu.price) %> </span>
+                </div>
+            <% }); %>  
+        </div>
+
+    </section>
+    <!-- dishes section ends -->
+
+    <!-- about section starts  -->
+    <section class="about" id="about">
+
+        <h1 class="heading"> Tổng Quan </h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="/img/301475271_1402834600207557_6933951900741632919_n.jpg" style="border-radius: 25px;" alt="">
+            </div>
+
+            <div class="content">
+                <h3 style="text-align: center;">Phòng Trà Không Tên</h3>
+                <p>Phòng Trà Không Tên đi vào hoạt động từ tháng 4-2006, đây không chỉ là nơi thư giãn, giao lưu thuần túy giữa khán giả- ca sĩ mà còn là cõi riêng của rất nhiều văn nghệ sĩ hải ngoại về biểu diễn tại quê nhà như: Elvis Phương, Duy Quang, Thái Châu, Tommy Ngô,...</p>
+                <p>Gần 12 năm hoạt động, Không Tên không những trụ được mà ngày càng có nhiều khán giả trong nước và Việt kiều tìm đến, nhất là sau khi khán phòng nâng cấp nội thất với trên 400 chỗ ngồi và một lầu”. Sự ấm cúng, phục vụ chu đáo và nhiều chương trình hay đã nhanh chóng giúp Không Tên trở thành “cõi vô thường” của những người Việt xa quê hương, đến đây sẽ có cảm giác như đang ở chính “ngôi nhà âm nhạc” của mình.</p>
+                <div class="icons-container">
+                    <div class="icons">
+                        <i class="fa-solid fa-music"></i>
+                        <span>music</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-martini-glass"></i>
+                        <span>drinks</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-sharp fa-solid fa-face-laugh-beam"></i>
+                        <span>Enjoy</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- about section ends -->
+
+    <!-- menu section starts  -->
+    <section class="menu" id="menu">
+
+        <h1 class="sub-heading"> Lịch Diễn  </h1>
+        <h3 class="heading"> Phòng Trà </h3>
+
+        <div class="box-container">
+            <% shows.forEach(show => { %>
+                <div class="box">
+                    <div class="image">
+                        <img src="/img/shows/<%=show.imageShow %>" alt="" height="283" width="220">
+                    </div>
+                    <div class="content">
+                        <h3 style="text-align: center;"><%=show.day %> - <%=show.date.toLocaleString('zh-HK',{day:'numeric',month: 'numeric',year: 'numeric'})%></h3>
+                        <h3 style="text-align: center;">Đêm nhạc</h3>
+                        <h3 style="text-align: center;"><%=show.content %></h3>
+                        <h3 style="text-align: center;"><%=show.singer %></h3>
+                        <div style="text-align: center;"><a href="#order" class="btn">Đặt Bàn</a></div>
+                    </div>
+                </div>
+            <% });%>
+        </div>
+
+    </section>
+
+    <!-- order section starts  -->
+    <section class="order" id="order">
+        <% if (user) { %>
+            <h3 class="sub-heading"> order now </h3>
+            <h1 class="heading"> Đặt Bàn Phòng Trà </h1>
+            <form class="form-user-order">
+                <input type="text" id="id_user" value="<%=user._id%>" hidden>
+                <div class="inputBox">
+                    <div class="input">
+                        <span>Họ và tên</span>
+                        <input type="text" id="name" value="<%=user.name%>" required disabled>
+                    </div>
+                    <div class="input">
+                        <span>Số Điện thoại</span>
+                        <input type="text" id="phone" placeholder="Vui lòng nhập SĐT" required pattern="[0-9]{10,11}" oninvalid="setCustomValidity('Vui lòng nhập số điện thoại hợp lệ')" onchange="try{setCustomValidity('')}catch(e){}">
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <div class="input">
+                        <span>Số Lượng</span>
+                        <input type="number" id="amount" placeholder="Vui lòng nhập số lượng" min="1" required>
+                    </div>
+                    <div class="input">
+                        <span>Ngày Đặt</span>
+                        <input type="date" id="dateOrder" placeholder="extra with food" required disabled>
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <div class="input">
+                        <span>Show Diễn</span>
+                        <select id="show" required>
+                            <option selected value="" >*Chọn Show Diễn</option>
+                        <% shows.forEach(show => { %>
+                            <option value="<%=show._id %>" data-date="<%=show.date.toLocaleString('zh-HK',{day:'numeric',month: 'numeric',year: 'numeric'}) %>"><%=show.content %></option>
+                        <% }); %>  
+                        </select>
+                    </div>
+                    <div class="input">
+                        <span>Thời gian</span>
+                        <input id="timeOrder" type="time" min="09:00" max="22:00" required oninvalid="setCustomValidity('Khung giờ phòng trà là từ 9:00 -- 22:00')" onchange="try{setCustomValidity('')}catch(e){}">
+                    </div>
+                </div>
+                <div>
+                    <span class="note">Ghi Chú</span>
+                    <textarea id="note" placeholder="Ghi Chú" id="" class="text-note" cols="30" rows="10"></textarea>
+                </div>
+
+                <input type="submit" value="order now" class="btn">
+            </form>
+        <% } else {%>
+            <h3 class="sub-heading"> order now </h3>
+            <div style="text-align: center;font-size: 20px;"><h1>Vui lòng đăng nhập để đặt bàn</h1></div>
+        <% } %>
+    </section>
+
+    <!-- order section ends -->
+
+    <!-- footer section starts  -->
+    <%- include("../partials/footer.ejs"); %>
+    <!-- footer section ends -->
+
+    <script>
+        let section = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('header .navbar a');
+
+        window.onscroll = () =>{
+            section.forEach(sec =>{
+                let top = window.scrollY;
+                let height = sec.offsetHeight;
+                let offset = sec.offsetTop - 150;
+                let id = sec.getAttribute('id');
+                if(top >= offset && top < offset + height){
+                    navLinks.forEach(links =>{
+                        links.classList.remove('active');
+                        document.querySelector('header .navbar a[href*='+id+']').classList.add('active');
+                    });
+                };
+            });
+        }
+    </script>
+
+    <script src="/js/bundle.js"></script>
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+
+    <!-- custom js file link  -->
+    <!-- <script src="/js/overview.js"></script> -->
+</body>
+</html>

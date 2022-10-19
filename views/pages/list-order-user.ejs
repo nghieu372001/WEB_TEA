@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng Trà Không Tên</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/overview.css">
+    <style>
+        #table {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        #table td, #table th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        
+        #table tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #table tr:hover {background-color: #ddd;}
+        
+        #table th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #27ae60;
+          color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- header section starts      -->
+    <header>
+    <a href="#dishes" class="logo">Phòng Trà Không Tên</a>
+        <nav class="navbar">
+            <a href="/#dishes">Đồ Uống</a>
+            <a href="/#about">Giới Thiệu</a>
+            <a href="/#menu">Lịch Diễn</a>
+            <a href="/#order">Đặt Bàn</a>
+            <a class="active" href="/list-order-user">Lịch Sử Đặt Bàn</a>
+        </nav>
+        <div class="log">
+            <div><a style="color: black;"><span style="font-size:1.7rem ;" class="log-out" >Đăng Xuất</span></a></div>
+            <div style="text-align: center;"><a id="active" href="#" style="color: white;text-align: center;"><span class="name" style="font-size:1.7rem ;background-color:#27ae60;text-transform: none;"><%= lastName %></span></a></div>
+        </div>
+
+    </header>
+    <!-- header section ends-->
+
+    <h1 style="margin:100px 0 37px 0; text-align: center; font-size: 25px;">Lịch Sử Đặt Bàn</h1>
+    <div style="margin: 0 100px 275px 100px">
+        <table id="table" style="font-size: 20px;width: 100%;text-align: center;">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Ngày Đặt</th>
+                    <th style="text-align: center;">Thời Gian</th>
+                    <th style="text-align: center;">Số Người</th>
+                    <th style="text-align: center;">Lịch Diễn</th>
+                    <th style="text-align: center;">Ghi Chú</th>
+                    <th style="text-align: center;">Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% arrayOrder.forEach(orderUser =>{%> 
+                <tr>
+                    <td><%= orderUser.dateOrder.toLocaleString('zh-HK',{day:'numeric',month: 'numeric',year: 'numeric'})%></td>
+                    <td><%= orderUser.timeOrder%></td>
+                    <td><%= orderUser.amount%></td>
+                    <td><%= orderUser.show.content%></td>
+                    <td><%= orderUser.note%></td>
+                    <td><%= orderUser.status%></td>
+                </tr>
+                <% });%> 
+            </tbody>
+          </table>
+    </div>
+
+    <!-- footer section starts  -->
+    <%- include("../partials/footer.ejs"); %>
+    <!-- footer section ends -->
+
+    <script src="/js/bundle.js"></script>
+
+</body>
+</html>
