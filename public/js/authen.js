@@ -41,7 +41,7 @@ export const login = async (data) =>{
             },1500)
         }
         else if(res.data.status === 'success' && res.data.data.user.role === 'admin'){
-            showAlert('success', 'Admin đăng nhập thành công!')
+            showAlert('success', 'Quản lý đăng nhập thành công!')
             window.setTimeout(()=>{
                 location.assign('/crud-menu-form')
             },1500)
@@ -69,3 +69,19 @@ export const logout = async (email,password) =>{
     }; 
 
 }
+
+
+//test
+// export const getUserByID = async (id) =>{
+//     try{
+//         const res = await axios({
+//             method:'GET',
+//             url:`/api/v1/users/${id}`,
+//         });
+//         return res
+//     }
+//     catch(err){
+//         console.log('Lỗi');
+//     }; 
+
+// }

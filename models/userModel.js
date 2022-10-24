@@ -14,6 +14,11 @@ const userSchema=new mongoose.Schema({
         lowercase:true,
         validate:[validator.isEmail,'Please provide a valid email'] //validator.isEmail: kiểm tra có phải là email không, nếu không thì log chuỗi 'Please provide a valid email'
     },
+    phone:{
+        type:String,
+        required:[true,'Please provide your phone!'],
+    },
+
     role:{
         type:String,
         emun:['user','admin'], //emun chỉ nhận 1 trong số giá trị trong mảng
@@ -45,6 +50,9 @@ const userSchema=new mongoose.Schema({
     toJSON:{virtuals:true},
     toObject:{virtuals:true}
 });
+
+userSchema.index({email:1,phone:1},{unique:true})
+
 
 userSchema.virtual('orders',{ //orders: tên field ảo được tạo 
     ref:'Order', 

@@ -62,6 +62,10 @@ app.use('/api/v1/shows',showRouter)
 const orderRouter=require('./routes/orderRoutes')
 app.use('/api/v1/orders',orderRouter)
 
+//6. Seat
+const seatRouter=require('./routes/seatRoutes')
+app.use('/api/v1/seats',seatRouter)
+
 // Xử lý các url chưa được định nghĩa, để ở cuối cùng code
 app.all('*',(req,res,next)=>{// thay vì phải viết code xử cho từng phương thức http như get, post, delete thì viết app.all là xử lý cho tất cả các phương thức http, '*' xử lý cho tất cả đường dẫn
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404)); // khi truyền đối số vào hàm next, dù là gì đi nữa thì Express luôn rằng đó là lỗi, sau đó nó sẽ bỏ qua tất cả các middleware khác trong middleware stack và gửi lỗi mà chúng ta truyền vào tới Global error handling middleware

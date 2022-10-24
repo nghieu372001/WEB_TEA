@@ -4,13 +4,15 @@
             <a class="active" href="#dishes">Đồ Uống</a>
             <a href="#about">Giới Thiệu</a>
             <a href="#menu">Lịch Diễn</a>
-            <a href="#order">Đặt Bàn</a>
             <% if (user && user.role == 'user') {%>
+            <a href="#order">Đặt Bàn</a>
+            <a href="#map">Sơ Đồ</a>
             <a href="/list-order-user">Lịch Sử Đặt Bàn</a>
             <%} else if(user && user.role == 'admin') {%>
+            <a href="#order">Đặt Bàn</a>
+            <a href="#map">Sơ Đồ</a>
             <a href="/crud-menu-form">Quản Lý</a>
-            <%}%>            
-
+            <%}%>               
         </nav>
 
     <div class="log">

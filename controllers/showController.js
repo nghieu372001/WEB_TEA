@@ -1,4 +1,5 @@
 const Show=require('../models/showModel'); // import model tour từ folder model
+const Seat=require('../models/seatModel'); // import model tour từ folder model
 const AppError=require('../utils/appError');
 const catchAsync=require('../utils/catchAsync');
 const multer =  require('multer'); // thư viện upload ảnh
@@ -50,6 +51,14 @@ exports.resizeShowImage = catchAsync(async (req,res,next) =>{
 exports.createShow=catchAsync(async(req,res,next)=>{
     req.body.imageShow = req.file.filename;
     const show=await Show.create(req.body);
+    let arrSeat = [];
+    for(let i = 1; i <= 15; i++){
+        arrSeat.push(
+            {name: i, show:`${show._id}`}
+        )
+    }
+    //console.log(arrSeat)
+    await Seat.insertMany(arrSeat)
     res.status(200).json({
         status:'success',
         data: {
@@ -60,7 +69,7 @@ exports.createShow=catchAsync(async(req,res,next)=>{
 
 //update show
 exports.updateShow=catchAsync(async (req,res,next)=>{ //hàm async return promise
-    const filterBody = filterObj(req.body, 'day','date','content','singer'); //filterBody = { name: 'Sophie Louise Hart 1' }
+    const filterBody = filterObj(req.body, 'day','date','time','content','singer'); //filterBody = { name: 'Sophie Louise Hart 1' }
     console.log(filterBody)
     if(req.file){
         filterBody.imageShow = req.file.filename //filterBody.photo vì upload.single('photo')
@@ -69,7 +78,7 @@ exports.updateShow=catchAsync(async (req,res,next)=>{ //hàm async return promis
 
     const show=await Show.findByIdAndUpdate(req.params.id,filterBody,{new:true,runValidators:true});
     if(!show){ // nếu không tồn tại ID hợp lệ trong database thì sẽ tạo ra lỗi
-        return next(new AppError('No menu found with that ID',404)); // return để thoát ra
+        return next(new AppError('No show found with that ID',404)); // return để thoát ra
     }
 
     res.status(200).json({
@@ -83,6 +92,7 @@ exports.updateShow=catchAsync(async (req,res,next)=>{ //hàm async return promis
 //delete show
 exports.deleteShow=catchAsync(async (req,res,next)=>{ //hàm async return promise
     const show = await Show.findByIdAndDelete(req.params.id); //delere ko trả ra dữ liệu nên ko lưu vào biến
+    await Seat.deleteMany({show: `${show.id}`});
 
     if(!show){ // nếu không tồn tại ID hợp lệ trong database thì sẽ tạo ra lỗi
         return next(new AppError('No show found with that ID',404)); // return để thoát ra

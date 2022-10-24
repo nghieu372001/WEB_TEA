@@ -43,6 +43,7 @@
             <a href="/#about">Giới Thiệu</a>
             <a href="/#menu">Lịch Diễn</a>
             <a href="/#order">Đặt Bàn</a>
+            <a href="/#map">Sơ đồ</a>
             <a class="active" href="/list-order-user">Lịch Sử Đặt Bàn</a>
         </nav>
         <div class="log">
@@ -59,10 +60,11 @@
             <thead>
                 <tr>
                     <th style="text-align: center;">Ngày Đặt</th>
-                    <th style="text-align: center;">Thời Gian</th>
+                    <th style="text-align: center;">Thời Gian Đến</th>
                     <th style="text-align: center;">Số Người</th>
                     <th style="text-align: center;">Lịch Diễn</th>
-                    <th style="text-align: center;">Ghi Chú</th>
+                    <th style="text-align: center;">Thời Gian Diễn</th>
+                    <th style="text-align: center;">Vị Trí</th>
                     <th style="text-align: center;">Trạng thái</th>
                 </tr>
             </thead>
@@ -70,10 +72,11 @@
                 <% arrayOrder.forEach(orderUser =>{%> 
                 <tr>
                     <td><%= orderUser.dateOrder.toLocaleString('zh-HK',{day:'numeric',month: 'numeric',year: 'numeric'})%></td>
-                    <td><%= orderUser.timeOrder%></td>
+                    <td><%= orderUser.timeCome%></td>
                     <td><%= orderUser.amount%></td>
                     <td><%= orderUser.show.content%></td>
-                    <td><%= orderUser.note%></td>
+                    <td><%= orderUser.show.time%></td>
+                    <td><%= orderUser.seat.name%></td>
                     <td><%= orderUser.status%></td>
                 </tr>
                 <% });%> 

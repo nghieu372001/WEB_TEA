@@ -18,23 +18,28 @@ const orderSchema=new mongoose.Schema({
         type:Date,
         required:[true,'Please enter booking date']
     },
-    note:{
-        type:String,
-        trim:true
-    },
     timeOrder:{
         type:String,
-        required:[true,'Please enter time']
+        required:[true,'Please enter time order']
+    },
+    timeCome:{
+        type:String,
+        required:[true,'Please enter time come']
     },
     user:{
         type: mongoose.Schema.ObjectId, 
         ref: 'User', 
-        required: [true,'Review must belong to a user']
+        required: [true,'Order must belong to a user']
     },
     show:{
         type: mongoose.Schema.ObjectId,
         ref: 'Show',
-        required: [true,'Review must belong to a show']
+        required: [true,'Order must belong to a show']
+    },
+    seat:{
+        type: mongoose.Schema.ObjectId,
+        ref: 'Seat',
+        required: [true,'Order must belong to a seat']
     },
     status:{
         type:String,
@@ -48,7 +53,7 @@ const orderSchema=new mongoose.Schema({
 
 
 orderSchema.pre(/^find/, function(next){
-    this.populate({path:'user',select:'name email'}).populate({path:'show',select:'content'});
+    this.populate({path:'user',select:'name email'}).populate({path:'show',select:'content time'}).populate({path:'seat', select:'name status description'});
     next();
 })
 

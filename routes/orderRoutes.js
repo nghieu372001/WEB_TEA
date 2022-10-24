@@ -12,12 +12,15 @@ router.post('/',authController.protect,authController.restrictTo('user'),orderCo
 
 //confirm order
 router.post('/confirm-order/:idOrder',authController.protect,authController.restrictTo('admin'),orderController.confirmOrder);
+router.post('/confirm-order/',authController.protect,authController.restrictTo('admin'),orderController.confirmManymOrder);
 
 //deny order
 router.post('/deny-order/:idOrder',authController.protect,authController.restrictTo('admin'),orderController.denyOrder);
+router.post('/deny-order/',authController.protect,authController.restrictTo('admin'),orderController.denyManyOrder);
 
 //delete order
 router.delete('/:idOrder',authController.protect,authController.restrictTo('admin'),orderController.deleteOrder);
+router.delete('/',authController.protect,authController.restrictTo('admin'),orderController.deleteManyOrder);
 
 
 module.exports=router;

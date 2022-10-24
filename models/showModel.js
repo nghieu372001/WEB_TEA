@@ -3,10 +3,14 @@ const mongoose=require('mongoose');
 const showSchema=new mongoose.Schema({
     day:{
         type:String,
-        required:[true,'Please enter date show']
+        required:[true,'Please enter day show']
     },
     date:{
         type:Date,
+        required:[true,'Please enter the date of the show']
+    },
+    time:{
+        type:String,
         required:[true,'Please enter the time of the show']
     },
     content:{

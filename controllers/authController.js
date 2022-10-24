@@ -37,6 +37,7 @@ exports.signup=catchAsync(async(req,res,next)=>{
     const newUser=await User.create({//User.create(req.body) return là 1 promise là 1 Object query, thực thi Object query(await User.create(req.body)) sẽ trả ra 1 object chứa thông tin của user vừa mới tạo
         name: req.body.name,
         email: req.body.email,
+        phone: req.body.phone,
         password: req.body.password,
         passwordConfirm: req.body.passwordConfirm
     });

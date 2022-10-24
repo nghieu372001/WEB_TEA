@@ -2,12 +2,15 @@ const Menu = require("../models/menuModel");
 const Show = require("../models/showModel");
 const Order = require("../models/orderModel");
 const User = require("../models/userModel");
+const Seat = require("../models/seatModel");
 
 //USER
 exports.getOverview = async (req,res)=>{
   const menus = await Menu.find();
   const shows = await Show.find();
+  const seats = await Seat.find();
   const user = res.locals.user;
+
   if(user){
     let lastName = user.name.split(' ')[user.name.split(' ').length - 1]
     if(lastName.length > 10){
@@ -17,14 +20,16 @@ exports.getOverview = async (req,res)=>{
       user:user,
       lastName:lastName,
       menus:menus,
-      shows:shows
+      shows:shows,
+      seats:seats
     })
   }
   else{
     res.status(200).render('./pages/overview',{
       user:false,
       menus:menus,
-      shows:shows
+      shows:shows,
+      seats:seats
     })
   }
 };

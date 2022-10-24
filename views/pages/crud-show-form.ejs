@@ -63,6 +63,7 @@
                       <th>Stt</th>
                       <th>Thứ</th>
                       <th>Ngày</th>
+                      <th>Thời gian</th>
                       <th>Nội dung</th>
                       <th>Ca sĩ</th>
                       <th>Chức năng</th>
@@ -74,6 +75,7 @@
                         <td><%= index + 1%></td>
                         <td><%= show.day%></td>
                         <td><%= show.date.toLocaleString('zh-HK',{day:'numeric',month: 'numeric',year: 'numeric'})%></td>
+                        <td><%= show.time%></td>
                         <td><%= show.content%></td>
                         <td><%= show.singer%></td>
                         <td>

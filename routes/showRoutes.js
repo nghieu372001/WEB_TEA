@@ -2,6 +2,7 @@ const express=require('express');
 const authController=require('../controllers/authController'); //import file authController.js từ thư mục controller
 const showController=require('../controllers/showController'); //import file authController.js từ thư mục controller
 
+
 const router=express.Router();
 
 router.post('/',authController.protect,authController.restrictTo('admin'),showController.uploadShowImage,showController.resizeShowImage,showController.createShow);
