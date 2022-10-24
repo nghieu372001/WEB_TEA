@@ -5794,23 +5794,59 @@ if (formUserOrder) {
 
 
     var getDate = new Date();
-    var dateCustomerOrder = new Date(dateOrder);
+    var yearCurrent = getDate.getFullYear();
+    var monthCurrent = getDate.getMonth() + 1;
+    var dayCurrent = getDate.getDate(); // T4 ngày 22/12/2021
 
-    if (getDate > dateCustomerOrder) {
+    var arrayDateInput = dateOrder.split('-');
+
+    if (Number(arrayDateInput[0]) > Number(yearCurrent)) {
+      (0, _userCreateOrder.createNewOrder)({
+        name: name,
+        phone: phone,
+        amount: amount,
+        dateOrder: dateOrder,
+        show: show,
+        timeOrder: timeOrder,
+        timeCome: timeCome,
+        seat: seat
+      }, id_user);
+    } else if (Number(arrayDateInput[0]) == Number(yearCurrent)) {
+      if (Number(arrayDateInput[1]) > Number(monthCurrent)) {
+        (0, _userCreateOrder.createNewOrder)({
+          name: name,
+          phone: phone,
+          amount: amount,
+          dateOrder: dateOrder,
+          show: show,
+          timeOrder: timeOrder,
+          timeCome: timeCome,
+          seat: seat
+        }, id_user);
+      } else if (Number(arrayDateInput[1]) == Number(monthCurrent)) {
+        if (Number(arrayDateInput[2]) >= Number(dayCurrent)) {
+          (0, _userCreateOrder.createNewOrder)({
+            name: name,
+            phone: phone,
+            amount: amount,
+            dateOrder: dateOrder,
+            show: show,
+            timeOrder: timeOrder,
+            timeCome: timeCome,
+            seat: seat
+          }, id_user);
+        } else {
+          (0, _alert.showAlert)('error', 'Show diễn không tồn tại');
+          return;
+        }
+      } else {
+        (0, _alert.showAlert)('error', 'Show diễn không tồn tại');
+        return;
+      }
+    } else if (Number(arrayDateInput[0]) < Number(yearCurrent)) {
       (0, _alert.showAlert)('error', 'Show diễn không tồn tại');
       return;
     }
-
-    (0, _userCreateOrder.createNewOrder)({
-      name: name,
-      phone: phone,
-      amount: amount,
-      dateOrder: dateOrder,
-      show: show,
-      timeOrder: timeOrder,
-      timeCome: timeCome,
-      seat: seat
-    }, id_user);
   });
 } //Admin confirm user order
 
