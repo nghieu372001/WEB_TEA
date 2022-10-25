@@ -7,9 +7,15 @@ const Seat = require("../models/seatModel");
 //USER
 exports.getOverview = async (req,res)=>{
   const menus = await Menu.find();
-  const shows = await Show.find();
+  const showsNotFilter = await Show.find();
   const seats = await Seat.find();
   const user = res.locals.user;
+
+  //console.log(new Date(shows[2].date).setHours(0,0,0,0) === new Date().setHours(0,0,0,0));
+  // chỉ hiện những show có ngày lớn hơn hoặc bằng ngày hiện tại
+  let shows = showsNotFilter.filter(el => {
+    return new Date(el.date).setHours(0,0,0,0) >= new Date().setHours(0,0,0,0)
+  })
 
   if(user){
     let lastName = user.name.split(' ')[user.name.split(' ').length - 1]

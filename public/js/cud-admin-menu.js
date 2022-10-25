@@ -9,7 +9,7 @@ export const createNewMenu = async (data) =>{
             data: data//data send with request(gửi lên url)
         });
         if(res.data.status === 'success'){
-            showAlert('success', 'Create menu successfully');
+            showAlert('success', 'Thêm đồ uống thành công');
             window.setTimeout(()=>{
                 location.assign('/crud-menu-form')
             },1500)
@@ -35,7 +35,7 @@ export const updateMenu = async (data,id) =>{
             data: data//data send with request(gửi lên url)
         });
         if(res.data.status === 'success'){
-            showAlert('success', 'Update menu successfully');
+            showAlert('success', 'Cập nhật đồ uống thành công');
             window.setTimeout(()=>{
                 location.assign('/crud-menu-form')
             },1500)
@@ -62,10 +62,10 @@ export const deleteMenu = async (id) =>{
         });
 
         if(res.status == '204'){
-            showAlert('success', 'Delete menu successfully');
+            showAlert('success', 'Xóa đồ uống thành công');
             window.setTimeout(()=>{
                 location.assign('/crud-menu-form')
-            },500)
+            },1500)
         }
     }
     catch(err){

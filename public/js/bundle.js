@@ -4610,7 +4610,7 @@ var signup = /*#__PURE__*/function () {
             res = _context.sent;
 
             if (res.data.status === 'success') {
-              (0, _alert.showAlert)('success', 'Sign up successfully!');
+              (0, _alert.showAlert)('success', 'Đăng nhập thành công!');
               window.setTimeout(function () {
                 location.assign('/');
               }, 1500);
@@ -4805,7 +4805,7 @@ var createNewMenu = /*#__PURE__*/function () {
             res = _context.sent;
 
             if (res.data.status === 'success') {
-              (0, _alert.showAlert)('success', 'Create menu successfully');
+              (0, _alert.showAlert)('success', 'Thêm đồ uống thành công');
               window.setTimeout(function () {
                 location.assign('/crud-menu-form');
               }, 1500);
@@ -4859,7 +4859,7 @@ var updateMenu = /*#__PURE__*/function () {
             res = _context2.sent;
 
             if (res.data.status === 'success') {
-              (0, _alert.showAlert)('success', 'Update menu successfully');
+              (0, _alert.showAlert)('success', 'Cập nhật đồ uống thành công');
               window.setTimeout(function () {
                 location.assign('/crud-menu-form');
               }, 1500);
@@ -4912,10 +4912,10 @@ var deleteMenu = /*#__PURE__*/function () {
             res = _context3.sent;
 
             if (res.status == '204') {
-              (0, _alert.showAlert)('success', 'Delete menu successfully');
+              (0, _alert.showAlert)('success', 'Xóa đồ uống thành công');
               window.setTimeout(function () {
                 location.assign('/crud-menu-form');
-              }, 500);
+              }, 1500);
             }
 
             _context3.next = 11;
@@ -4985,7 +4985,7 @@ var createNewShow = /*#__PURE__*/function () {
             res = _context.sent;
 
             if (res.data.status === 'success') {
-              (0, _alert.showAlert)('success', 'Create Show successfully');
+              (0, _alert.showAlert)('success', 'Thêm lịch diễn thành công');
               window.setTimeout(function () {
                 location.assign('/crud-show-form');
               }, 1500);
@@ -5039,10 +5039,10 @@ var updateShow = /*#__PURE__*/function () {
             res = _context2.sent;
 
             if (res.data.status === 'success') {
-              (0, _alert.showAlert)('success', 'Update show successfully');
+              (0, _alert.showAlert)('success', 'Cập nhật lịch diễn thành công');
               window.setTimeout(function () {
                 location.assign('/crud-show-form');
-              }, 1000);
+              }, 1500);
             }
 
             _context2.next = 11;
@@ -5092,10 +5092,10 @@ var deleteShow = /*#__PURE__*/function () {
             res = _context3.sent;
 
             if (res.status == '204') {
-              (0, _alert.showAlert)('success', 'Delete show successfully');
+              (0, _alert.showAlert)('success', 'Xóa lịch diễn thành công');
               window.setTimeout(function () {
                 location.assign('/crud-show-form');
-              }, 500);
+              }, 1500);
             }
 
             _context3.next = 10;
@@ -5790,63 +5790,18 @@ if (formUserOrder) {
     if (seat == '') {
       (0, _alert.showAlert)('error', 'Vui lòng chọn vị trí');
       return;
-    } //lấy ngày hiện tại
-
-
-    var getDate = new Date();
-    var yearCurrent = getDate.getFullYear();
-    var monthCurrent = getDate.getMonth() + 1;
-    var dayCurrent = getDate.getDate(); // T4 ngày 22/12/2021
-
-    var arrayDateInput = dateOrder.split('-');
-
-    if (Number(arrayDateInput[0]) > Number(yearCurrent)) {
-      (0, _userCreateOrder.createNewOrder)({
-        name: name,
-        phone: phone,
-        amount: amount,
-        dateOrder: dateOrder,
-        show: show,
-        timeOrder: timeOrder,
-        timeCome: timeCome,
-        seat: seat
-      }, id_user);
-    } else if (Number(arrayDateInput[0]) == Number(yearCurrent)) {
-      if (Number(arrayDateInput[1]) > Number(monthCurrent)) {
-        (0, _userCreateOrder.createNewOrder)({
-          name: name,
-          phone: phone,
-          amount: amount,
-          dateOrder: dateOrder,
-          show: show,
-          timeOrder: timeOrder,
-          timeCome: timeCome,
-          seat: seat
-        }, id_user);
-      } else if (Number(arrayDateInput[1]) == Number(monthCurrent)) {
-        if (Number(arrayDateInput[2]) >= Number(dayCurrent)) {
-          (0, _userCreateOrder.createNewOrder)({
-            name: name,
-            phone: phone,
-            amount: amount,
-            dateOrder: dateOrder,
-            show: show,
-            timeOrder: timeOrder,
-            timeCome: timeCome,
-            seat: seat
-          }, id_user);
-        } else {
-          (0, _alert.showAlert)('error', 'Show diễn không tồn tại');
-          return;
-        }
-      } else {
-        (0, _alert.showAlert)('error', 'Show diễn không tồn tại');
-        return;
-      }
-    } else if (Number(arrayDateInput[0]) < Number(yearCurrent)) {
-      (0, _alert.showAlert)('error', 'Show diễn không tồn tại');
-      return;
     }
+
+    (0, _userCreateOrder.createNewOrder)({
+      name: name,
+      phone: phone,
+      amount: amount,
+      dateOrder: dateOrder,
+      show: show,
+      timeOrder: timeOrder,
+      timeCome: timeCome,
+      seat: seat
+    }, id_user);
   });
 } //Admin confirm user order
 
@@ -6289,7 +6244,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55775" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54930" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

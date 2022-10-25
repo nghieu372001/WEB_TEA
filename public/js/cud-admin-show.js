@@ -10,7 +10,7 @@ export const createNewShow = async (data) =>{
             data: data
         });
         if(res.data.status === 'success'){
-            showAlert('success', 'Create Show successfully');
+            showAlert('success', 'Thêm lịch diễn thành công');
             window.setTimeout(()=>{
                 location.assign('/crud-show-form')
             },1500)
@@ -34,10 +34,10 @@ export const updateShow = async (data,id) =>{
             data: data//data send with request(gửi lên url)
         });
         if(res.data.status === 'success'){
-            showAlert('success', 'Update show successfully');
+            showAlert('success', 'Cập nhật lịch diễn thành công');
             window.setTimeout(()=>{
                 location.assign('/crud-show-form')
-            },1000)
+            },1500)
 
         }
     }
@@ -61,10 +61,10 @@ export const deleteShow = async (id) =>{
         });
 
         if(res.status == '204'){
-            showAlert('success', 'Delete show successfully');
+            showAlert('success', 'Xóa lịch diễn thành công');
             window.setTimeout(()=>{
                 location.assign('/crud-show-form')
-            },500)
+            },1500)
         }
     }
     catch(err){
