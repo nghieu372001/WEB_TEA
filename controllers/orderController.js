@@ -28,6 +28,8 @@ exports.createOrder=catchAsync(async(req,res,next)=>{
 
 //confirm order
 exports.confirmOrder=catchAsync(async (req,res,next)=>{
+    const comfirmOrder =await Order.findOne({_id: req.params.idOrder});
+    await Seat.findByIdAndUpdate({_id: comfirmOrder.seat.id},{status:'seat sold',description:'Bàn Đã Đặt'}); // cập nhập lại chỗ ngồi 
     await Order.findByIdAndUpdate(req.params.idOrder, {status:'Đã xác nhận'})
     res.status(204).json({
         status:'success',
