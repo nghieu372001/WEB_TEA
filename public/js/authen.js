@@ -10,7 +10,7 @@ export const signup = async (data) =>{
             data: data // data send with request(gửi lên url)
         });
         if(res.data.status === 'success'){
-            showAlert('success', 'Đăng nhập thành công!')
+            showAlert('success', 'Đăng ký thành công!')
             window.setTimeout(()=>{
                 location.assign('/')
             },1500)

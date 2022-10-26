@@ -4610,7 +4610,7 @@ var signup = /*#__PURE__*/function () {
             res = _context.sent;
 
             if (res.data.status === 'success') {
-              (0, _alert.showAlert)('success', 'Đăng nhập thành công!');
+              (0, _alert.showAlert)('success', 'Đăng ký thành công!');
               window.setTimeout(function () {
                 location.assign('/');
               }, 1500);
@@ -6158,6 +6158,9 @@ if (btnCheckAllOrder) {
         arrIdByCheck.splice(0, arrIdByCheck.length); // xóa tất cả id ra khỏi mảng
       });
     }
+
+    ;
+    console.log(arrIdByCheck);
   });
 }
 
@@ -6180,9 +6183,12 @@ if (btnCheckOrders) {
       if (btnCheckOrder.checked == true) {
         arrIdByCheck.push(btnCheckOrder.dataset.id);
       } else {
-        var deleteArr = arrIdByCheck.indexOf(btnCheckOrder);
+        var deleteArr = arrIdByCheck.indexOf(btnCheckOrder.dataset.id);
         arrIdByCheck.splice(+deleteArr, 1);
       }
+
+      ;
+      console.log(arrIdByCheck);
 
       var someChecked = _toConsumableArray(btnCheckOrders).some(function (el) {
         return el.checked == true;
@@ -6244,7 +6250,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54930" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60357" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

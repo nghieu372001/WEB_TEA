@@ -574,7 +574,8 @@ if(btnCheckAllOrder){
                 el.checked = false;
                 arrIdByCheck.splice(0,arrIdByCheck.length) // xóa tất cả id ra khỏi mảng
             })
-        }
+        };
+        console.log(arrIdByCheck)
     })
 }
 
@@ -599,10 +600,11 @@ if(btnCheckOrders){
                 arrIdByCheck.push(btnCheckOrder.dataset.id)
             }
             else{
-                const deleteArr = arrIdByCheck.indexOf(btnCheckOrder);
+                const deleteArr = arrIdByCheck.indexOf(btnCheckOrder.dataset.id);
                 arrIdByCheck.splice(+deleteArr,1)
-            }
+            };
 
+            console.log(arrIdByCheck);
 
             var someChecked = [...btnCheckOrders].some(el => {
                 return el.checked == true
