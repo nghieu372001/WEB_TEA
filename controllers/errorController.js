@@ -23,8 +23,6 @@ module.exports=(err,req,res,next)=>{ // định nghĩa 4 tham số err,req,res,n
     err.statusCode=err.statusCode || 500;
     err.status=err.status || 'error';
 
-    console.log(err.message);
-
     if(err.message.includes('tea-room-app.shows index: date_1_content_1 dup key')){
         if(req.body.imageShow != 'undefined'){
             const fileImgShowDel = req.body.imageShow

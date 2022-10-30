@@ -8,7 +8,7 @@ const Seat = require("../models/seatModel");
 exports.getOverview = async (req,res)=>{
   const menus = await Menu.find();
   const showsNotFilter = await Show.find();
-  const seats = await Seat.find();
+  const seats = await Seat.find().sort({name:-1});
   const user = res.locals.user;
 
   //console.log(new Date(shows[2].date).setHours(0,0,0,0) === new Date().setHours(0,0,0,0));

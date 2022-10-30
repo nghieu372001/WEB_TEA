@@ -51,6 +51,7 @@ const orderSchema=new mongoose.Schema({
     toObject:{virtuals:true}
 });
 
+orderSchema.index({user:1,show:1},{unique:true})
 
 orderSchema.pre(/^find/, function(next){
     this.populate({path:'user',select:'name email'}).populate({path:'show',select:'content time'}).populate({path:'seat', select:'name status description'});

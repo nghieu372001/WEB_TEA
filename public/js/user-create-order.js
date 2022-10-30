@@ -17,6 +17,11 @@ export const createNewOrder = async (data,id_user) =>{
         }
     }
     catch(err){
-        showAlert('error','Vui lòng thử lại')
+        if(err.response.data.message.includes('tea-room-app.orders index: user_1_show_1 dup key')){
+            showAlert('error','Lịch diễn đã được đặt. Vui lòng chọn lịch diễn khác !');
+        }
+        else{
+            showAlert('error','Vui lòng thử lại')
+        }
     }
 }

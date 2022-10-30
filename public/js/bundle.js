@@ -5173,7 +5173,12 @@ var createNewOrder = /*#__PURE__*/function () {
           case 7:
             _context.prev = 7;
             _context.t0 = _context["catch"](0);
-            (0, _alert.showAlert)('error', 'Vui lòng thử lại');
+
+            if (_context.t0.response.data.message.includes('tea-room-app.orders index: user_1_show_1 dup key')) {
+              (0, _alert.showAlert)('error', 'Lịch diễn đã được đặt. Vui lòng chọn lịch diễn khác !');
+            } else {
+              (0, _alert.showAlert)('error', 'Vui lòng thử lại');
+            }
 
           case 10:
           case "end":
@@ -6250,7 +6255,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60357" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50304" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
