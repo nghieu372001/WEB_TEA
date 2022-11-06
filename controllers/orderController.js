@@ -126,10 +126,13 @@ exports.denyManyOrder=catchAsync(async (req,res,next)=>{
 });
 
 
+
 //delete order
 exports.deleteOrder=catchAsync(async (req,res,next)=>{
-    const orderDeny =await Order.findOne({_id: req.params.idOrder});
-    await Seat.findByIdAndUpdate({_id: orderDeny.seat.id},{status:'seat',description:'Trống'}); // cập nhập lại chỗ ngồi
+    const orderDelete =await Order.findOne({_id: req.params.idOrder});
+    if(orderDelete.seat && orderDelete.status != 'Đã hủy'){
+        await Seat.findByIdAndUpdate({_id: orderDelete.seat.id},{status:'seat',description:'Trống'}); // cập nhập lại chỗ ngồi
+    }
     await Order.findByIdAndDelete(req.params.idOrder)
     res.status(204).json({
         status:'success',
@@ -141,9 +144,11 @@ exports.deleteOrder=catchAsync(async (req,res,next)=>{
 exports.deleteManyOrder=catchAsync(async (req,res,next)=>{
     const arrOrder = await Order.find({_id: { $in: req.body}});
     for(let i = 0; i <= arrOrder.length - 1;i++){
-        await Seat.findByIdAndUpdate({_id: arrOrder[i].seat.id},{status:'seat',description:'Trống'}); // cập nhập lại chỗ ngồi (many)
+        if(arrOrder[i].seat && arrOrder[i].status != 'Đã hủy'){
+            await Seat.findByIdAndUpdate({_id: arrOrder[i].seat.id},{status:'seat',description:'Trống'}); // cập nhập lại chỗ ngồi (many)
+        }
     }
-    await Order.deleteMany({_id: { $in: req.body}},{status:'Đã hủy'})
+    await Order.deleteMany({_id: { $in: req.body}})
     res.status(204).json({
         status:'success',
         data:null

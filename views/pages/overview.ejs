@@ -146,7 +146,6 @@
                         <input id="timeOrder" type="time" disabled required oninvalid="setCustomValidity('Khung giờ phòng trà là từ 9:00 -- 23:00')" onchange="try{setCustomValidity('')}catch(e){}">
                     </div>
                 </div>
-
                 <div class="inputBox">
                     <div class="input">
                         <span>Thời gian đến</span>
@@ -161,7 +160,6 @@
                         <a href="/#map"><input type="text" id="position" placeholder="Vui lòng chọn bàn tại sơ đồ" disabled required></input></a>
                     </div>
                 </div>
-
                 <input type="submit" value="order now" class="btn">
             </form>
     </section>
@@ -217,7 +215,6 @@
     <script>
         let section = document.querySelectorAll('section');
         let navLinks = document.querySelectorAll('header .navbar a');
-
         window.onscroll = () =>{
             section.forEach(sec =>{
                 let top = window.scrollY;

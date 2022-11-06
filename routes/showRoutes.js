@@ -9,6 +9,7 @@ router.post('/',authController.protect,authController.restrictTo('admin'),showCo
 router.patch('/:id',authController.protect,authController.restrictTo('admin'),showController.uploadShowImage,showController.resizeShowImage,showController.updateShow);
 router.delete('/:id',authController.protect,authController.restrictTo('admin'),showController.deleteShow) //authController.restrictTo('admin','lead-guide') // admin, lead-guide mới có quyền xóa tour
 
+// router.delete('/all',showController.deleteAll) 
 
 
 module.exports=router;

@@ -5792,6 +5792,9 @@ if (formUserOrder) {
     var timeCome = document.getElementById('timeCome').value;
     var seat = document.getElementById('id_seat').value; // lấy id của seat
 
+    var seatCusomer = document.getElementById('position').value;
+    var showCusomer = btnSelect.options[btnSelect.selectedIndex].dataset.content;
+
     if (seat == '') {
       (0, _alert.showAlert)('error', 'Vui lòng chọn vị trí');
       return;
@@ -5805,7 +5808,9 @@ if (formUserOrder) {
       show: show,
       timeOrder: timeOrder,
       timeCome: timeCome,
-      seat: seat
+      seat: seat,
+      seatCusomer: seatCusomer,
+      showCusomer: showCusomer
     }, id_user);
   });
 } //Admin confirm user order
@@ -6255,7 +6260,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50304" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52156" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

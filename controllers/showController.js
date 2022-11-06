@@ -1,4 +1,5 @@
 const Show=require('../models/showModel'); // import model tour từ folder model
+const Order=require('../models/orderModel'); // import model tour từ folder model
 const Seat=require('../models/seatModel'); // import model tour từ folder model
 const AppError=require('../utils/appError');
 const catchAsync=require('../utils/catchAsync');
@@ -91,6 +92,13 @@ exports.updateShow=catchAsync(async (req,res,next)=>{ //hàm async return promis
 
 //delete show
 exports.deleteShow=catchAsync(async (req,res,next)=>{ //hàm async return promise
+    const orderBelongShow = await Order.find({show: req.params.id});
+    if(orderBelongShow.length > 0){
+        for(let i = 0; i <= orderBelongShow.length -1; i++){
+            await Order.findByIdAndDelete(orderBelongShow[i].id)
+        }
+    }
+
     const show = await Show.findByIdAndDelete(req.params.id); //delere ko trả ra dữ liệu nên ko lưu vào biến
     await Seat.deleteMany({show: `${show.id}`});
 

@@ -234,13 +234,15 @@ if(formUserOrder){
         const timeOrder = document.getElementById('timeOrder').value;
         const timeCome = document.getElementById('timeCome').value;
         const seat = document.getElementById('id_seat').value;// lấy id của seat
+        const seatCusomer = document.getElementById('position').value;
+        const showCusomer = btnSelect.options[btnSelect.selectedIndex].dataset.content;
                 
         if(seat == ''){
             showAlert('error','Vui lòng chọn vị trí');
             return
         }
 
-        createNewOrder({name,phone,amount,dateOrder,show,timeOrder,timeCome,seat},id_user);
+        createNewOrder({name,phone,amount,dateOrder,show,timeOrder,timeCome,seat,seatCusomer,showCusomer},id_user);
     })
 }
 
