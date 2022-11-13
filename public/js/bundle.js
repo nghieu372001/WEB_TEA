@@ -5226,35 +5226,34 @@ var agreeOrder = /*#__PURE__*/function () {
             _context.prev = 0;
             _context.next = 3;
             return (0, _axios.default)({
-              method: 'POST',
+              method: "POST",
               url: "/api/v1/orders/confirm-order/".concat(idOrder)
             });
 
           case 3:
             res = _context.sent;
-            console.log(res);
 
-            if (res.status == '204') {
-              (0, _alert.showAlert)('success', 'Xác nhận đơn đặt bàn thành công');
+            if (res.status == "204") {
+              (0, _alert.showAlert)("success", "Xác nhận đơn đặt bàn thành công");
               window.setTimeout(function () {
                 location.reload(true);
               }, 1500);
             }
 
-            _context.next = 11;
+            _context.next = 10;
             break;
 
-          case 8:
-            _context.prev = 8;
+          case 7:
+            _context.prev = 7;
             _context.t0 = _context["catch"](0);
-            (0, _alert.showAlert)('error', _context.t0.response.data.message);
+            (0, _alert.showAlert)("error", _context.t0.response.data.message);
 
-          case 11:
+          case 10:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 8]]);
+    }, _callee, null, [[0, 7]]);
   }));
 
   return function agreeOrder(_x) {
@@ -5274,7 +5273,7 @@ var agreeManyOrder = /*#__PURE__*/function () {
             _context2.prev = 0;
             _context2.next = 3;
             return (0, _axios.default)({
-              method: 'POST',
+              method: "POST",
               url: "/api/v1/orders/confirm-order/",
               data: data
             });
@@ -5282,8 +5281,8 @@ var agreeManyOrder = /*#__PURE__*/function () {
           case 3:
             res = _context2.sent;
 
-            if (res.status == '204') {
-              (0, _alert.showAlert)('success', 'Xác nhận nhiều đơn đặt bàn thành công');
+            if (res.status == "204") {
+              (0, _alert.showAlert)("success", "Xác nhận nhiều đơn đặt bàn thành công");
               window.setTimeout(function () {
                 location.reload(true);
               }, 1500);
@@ -5295,7 +5294,7 @@ var agreeManyOrder = /*#__PURE__*/function () {
           case 7:
             _context2.prev = 7;
             _context2.t0 = _context2["catch"](0);
-            (0, _alert.showAlert)('error', _context2.t0.response.data.message);
+            (0, _alert.showAlert)("error", _context2.t0.response.data.message);
 
           case 10:
           case "end":
@@ -5322,7 +5321,7 @@ var denyOrder = /*#__PURE__*/function () {
             _context3.prev = 0;
             _context3.next = 3;
             return (0, _axios.default)({
-              method: 'POST',
+              method: "POST",
               url: "/api/v1/orders/deny-order/".concat(idOrder)
             });
 
@@ -5330,8 +5329,8 @@ var denyOrder = /*#__PURE__*/function () {
             res = _context3.sent;
             console.log(res);
 
-            if (res.status == '204') {
-              (0, _alert.showAlert)('success', 'Hủy đơn đặt bàn thành công');
+            if (res.status == "204") {
+              (0, _alert.showAlert)("success", "Hủy đơn đặt bàn thành công");
               window.setTimeout(function () {
                 location.reload(true);
               }, 1500);
@@ -5343,7 +5342,7 @@ var denyOrder = /*#__PURE__*/function () {
           case 8:
             _context3.prev = 8;
             _context3.t0 = _context3["catch"](0);
-            (0, _alert.showAlert)('error', _context3.t0.response.data.message);
+            (0, _alert.showAlert)("error", _context3.t0.response.data.message);
 
           case 11:
           case "end":
@@ -5370,7 +5369,7 @@ var denyManyOrder = /*#__PURE__*/function () {
             _context4.prev = 0;
             _context4.next = 3;
             return (0, _axios.default)({
-              method: 'POST',
+              method: "POST",
               url: "/api/v1/orders/deny-order/",
               data: data
             });
@@ -5378,8 +5377,8 @@ var denyManyOrder = /*#__PURE__*/function () {
           case 3:
             res = _context4.sent;
 
-            if (res.status == '204') {
-              (0, _alert.showAlert)('success', 'Hủy nhiều đơn đặt bàn thành công');
+            if (res.status == "204") {
+              (0, _alert.showAlert)("success", "Hủy nhiều đơn đặt bàn thành công");
               window.setTimeout(function () {
                 location.reload(true);
               }, 1500);
@@ -5391,7 +5390,7 @@ var denyManyOrder = /*#__PURE__*/function () {
           case 7:
             _context4.prev = 7;
             _context4.t0 = _context4["catch"](0);
-            (0, _alert.showAlert)('error', _context4.t0.response.data.message);
+            (0, _alert.showAlert)("error", _context4.t0.response.data.message);
 
           case 10:
           case "end":
@@ -5418,7 +5417,7 @@ var deleteOrder = /*#__PURE__*/function () {
             _context5.prev = 0;
             _context5.next = 3;
             return (0, _axios.default)({
-              method: 'DELETE',
+              method: "DELETE",
               url: "/api/v1/orders/".concat(idOrder)
             });
 
@@ -5426,8 +5425,8 @@ var deleteOrder = /*#__PURE__*/function () {
             res = _context5.sent;
             console.log(res);
 
-            if (res.status == '204') {
-              (0, _alert.showAlert)('success', 'Xóa đơn đặt bàn thành công');
+            if (res.status == "204") {
+              (0, _alert.showAlert)("success", "Xóa đơn đặt bàn thành công");
               window.setTimeout(function () {
                 location.reload(true);
               }, 1500);
@@ -5439,7 +5438,7 @@ var deleteOrder = /*#__PURE__*/function () {
           case 8:
             _context5.prev = 8;
             _context5.t0 = _context5["catch"](0);
-            (0, _alert.showAlert)('error', _context5.t0.response.data.message);
+            (0, _alert.showAlert)("error", _context5.t0.response.data.message);
 
           case 11:
           case "end":
@@ -5466,7 +5465,7 @@ var deleteManyOrder = /*#__PURE__*/function () {
             _context6.prev = 0;
             _context6.next = 3;
             return (0, _axios.default)({
-              method: 'DELETE',
+              method: "DELETE",
               url: "/api/v1/orders/",
               data: data
             });
@@ -5474,8 +5473,8 @@ var deleteManyOrder = /*#__PURE__*/function () {
           case 3:
             res = _context6.sent;
 
-            if (res.status == '204') {
-              (0, _alert.showAlert)('success', 'Xóa nhiều đơn đặt bàn thành công');
+            if (res.status == "204") {
+              (0, _alert.showAlert)("success", "Xóa nhiều đơn đặt bàn thành công");
               window.setTimeout(function () {
                 location.reload(true);
               }, 1500);
@@ -5487,7 +5486,7 @@ var deleteManyOrder = /*#__PURE__*/function () {
           case 7:
             _context6.prev = 7;
             _context6.t0 = _context6["catch"](0);
-            (0, _alert.showAlert)('error', _context6.t0.response.data.message);
+            (0, _alert.showAlert)("error", _context6.t0.response.data.message);
 
           case 10:
           case "end":
@@ -5541,46 +5540,46 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var signupForm = document.querySelector('.form-sign-up');
-var loginForm = document.querySelector('.form-log-in');
-var logoutBtn = document.querySelector('.log-out');
-var logoutBtnAdmin = document.querySelector('.log-out-admin');
-var imgCover = document.getElementById('imageDish');
-var imgCoverShow = document.getElementById('imageShow');
-var btnCreateMenu = document.querySelector('.btn-create-menu');
-var btnSaveMenu = document.querySelector('.btn-save-menu');
-var btnDeleteMenus = document.querySelectorAll('.btn-delete-menu');
-var btnDeleteMenuConfirm = document.querySelector('.btn-delete-confirm');
-var formUserOrder = document.querySelector('.form-user-order');
-var btnConfirmAgreeOrders = document.querySelectorAll('.btn-confirm-agree-order');
-var btnAgreeOrder = document.querySelector('.btn-agree-order');
-var btnConfirmDenyOrders = document.querySelectorAll('.btn-confirm-deny-order');
-var btnDenyOrder = document.querySelector('.btn-deny-order');
-var btnConfirmDeleteOrders = document.querySelectorAll('.btn-confirm-delete-order');
-var btnDeleteOrder = document.querySelector('.btn-delete-order');
-var btnCreateShow = document.querySelector('.btn-create-show');
-var btnSaveShow = document.querySelector('.btn-save-show');
-var btnDeleteShows = document.querySelectorAll('.btn-delete-show');
-var btnDeleteShowConfirm = document.querySelector('.btn-confirm-delete-show');
-var btnSelect = document.getElementById('show'); // const btnSelectOptions = document.querySelectorAll('.show');
+var signupForm = document.querySelector(".form-sign-up");
+var loginForm = document.querySelector(".form-log-in");
+var logoutBtn = document.querySelector(".log-out");
+var logoutBtnAdmin = document.querySelector(".log-out-admin");
+var imgCover = document.getElementById("imageDish");
+var imgCoverShow = document.getElementById("imageShow");
+var btnCreateMenu = document.querySelector(".btn-create-menu");
+var btnSaveMenu = document.querySelector(".btn-save-menu");
+var btnDeleteMenus = document.querySelectorAll(".btn-delete-menu");
+var btnDeleteMenuConfirm = document.querySelector(".btn-delete-confirm");
+var formUserOrder = document.querySelector(".form-user-order");
+var btnConfirmAgreeOrders = document.querySelectorAll(".btn-confirm-agree-order");
+var btnAgreeOrder = document.querySelector(".btn-agree-order");
+var btnConfirmDenyOrders = document.querySelectorAll(".btn-confirm-deny-order");
+var btnDenyOrder = document.querySelector(".btn-deny-order");
+var btnConfirmDeleteOrders = document.querySelectorAll(".btn-confirm-delete-order");
+var btnDeleteOrder = document.querySelector(".btn-delete-order");
+var btnCreateShow = document.querySelector(".btn-create-show");
+var btnSaveShow = document.querySelector(".btn-save-show");
+var btnDeleteShows = document.querySelectorAll(".btn-delete-show");
+var btnDeleteShowConfirm = document.querySelector(".btn-confirm-delete-show");
+var btnSelect = document.getElementById("show"); // const btnSelectOptions = document.querySelectorAll('.show');
 
-var dateShow = document.getElementById('date');
-var seats = document.querySelectorAll('.seat');
-var btnOrderShows = document.querySelectorAll('.btn-order-show');
-var btnCheckAllOrder = document.getElementById('check-all');
-var btnCheckOrders = document.querySelectorAll('.check-order');
-var btnForMany = document.getElementById('btn-for-many');
-var btnConfirmForMany = document.getElementById('btn-action-many-confirm'); //Signup
+var dateShow = document.getElementById("date");
+var seats = document.querySelectorAll(".seat");
+var btnOrderShows = document.querySelectorAll(".btn-order-show");
+var btnCheckAllOrder = document.getElementById("check-all");
+var btnCheckOrders = document.querySelectorAll(".check-order");
+var btnForMany = document.getElementById("btn-for-many");
+var btnConfirmForMany = document.getElementById("btn-action-many-confirm"); //Signup
 
 if (signupForm) {
-  signupForm.addEventListener('submit', function (e) {
+  signupForm.addEventListener("submit", function (e) {
     // nút btn mới có submit
     e.preventDefault();
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
-    var password = document.getElementById('password').value;
-    var passwordConfirm = document.getElementById('passwordConfirm').value;
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var password = document.getElementById("password").value;
+    var passwordConfirm = document.getElementById("passwordConfirm").value;
     console.log(name, email, phone, password, passwordConfirm);
     (0, _authen.signup)({
       name: name,
@@ -5594,11 +5593,11 @@ if (signupForm) {
 
 
 if (loginForm) {
-  loginForm.addEventListener('submit', function (e) {
+  loginForm.addEventListener("submit", function (e) {
     // nút btn mới có submit
     e.preventDefault();
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
     (0, _authen.login)({
       email: email,
       password: password
@@ -5608,17 +5607,17 @@ if (loginForm) {
 
 
 if (logoutBtn) {
-  logoutBtn.addEventListener('click', _authen.logout);
+  logoutBtn.addEventListener("click", _authen.logout);
 } //Logout Admin
 
 
 if (logoutBtnAdmin) {
-  logoutBtnAdmin.addEventListener('click', _authen.logout);
+  logoutBtnAdmin.addEventListener("click", _authen.logout);
 } //Display image menu before save in database
 
 
 if (imgCover) {
-  imgCover.addEventListener('change', /*#__PURE__*/function () {
+  imgCover.addEventListener("change", /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
       var ImagesFileURL;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
@@ -5628,7 +5627,7 @@ if (imgCover) {
               e.preventDefault();
 
               ImagesFileURL = function ImagesFileURL() {
-                var fileSelected = document.getElementById('imageDish').files;
+                var fileSelected = document.getElementById("imageDish").files;
 
                 if (fileSelected.length > 0) {
                   var fileToLoad = fileSelected[0];
@@ -5636,9 +5635,9 @@ if (imgCover) {
 
                   fileReader.onload = function (e) {
                     var srcData = e.target.result;
-                    var newImage = document.createElement('img');
+                    var newImage = document.createElement("img");
                     newImage.src = srcData;
-                    document.getElementById('displayImg').innerHTML = newImage.outerHTML;
+                    document.getElementById("displayImg").innerHTML = newImage.outerHTML;
                   };
 
                   fileReader.readAsDataURL(fileToLoad);
@@ -5663,7 +5662,7 @@ if (imgCover) {
 
 
 if (imgCoverShow) {
-  imgCoverShow.addEventListener('change', /*#__PURE__*/function () {
+  imgCoverShow.addEventListener("change", /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
       var ImagesFileURL;
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
@@ -5673,7 +5672,7 @@ if (imgCoverShow) {
               e.preventDefault();
 
               ImagesFileURL = function ImagesFileURL() {
-                var fileSelected = document.getElementById('imageShow').files;
+                var fileSelected = document.getElementById("imageShow").files;
 
                 if (fileSelected.length > 0) {
                   var fileToLoad = fileSelected[0];
@@ -5681,9 +5680,9 @@ if (imgCoverShow) {
 
                   fileReader.onload = function (e) {
                     var srcData = e.target.result;
-                    var newImage = document.createElement('img');
+                    var newImage = document.createElement("img");
                     newImage.src = srcData;
-                    document.getElementById('displayImgShow').innerHTML = newImage.outerHTML;
+                    document.getElementById("displayImgShow").innerHTML = newImage.outerHTML;
                   };
 
                   fileReader.readAsDataURL(fileToLoad);
@@ -5708,27 +5707,37 @@ if (imgCoverShow) {
 
 
 if (btnCreateMenu) {
-  btnCreateMenu.addEventListener('click', function (e) {
+  btnCreateMenu.addEventListener("click", function (e) {
     // nút btn mới có submit
     e.preventDefault();
     var form = new FormData();
-    form.append('name', document.getElementById('name').value);
-    form.append('price', document.getElementById('price').value);
-    form.append('description', document.getElementById('description').value);
-    form.append('imageDish', document.getElementById('imageDish').files[0]); // Check data
+    form.append("name", document.getElementById("name").value);
+    form.append("price", document.getElementById("price").value);
+    form.append("description", document.getElementById("description").value);
+    form.append("imageDish", document.getElementById("imageDish").files[0]); // Check data
 
-    if (form.get('name') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập tên món ăn');
+    if (form.get("name") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập tên món ăn");
       return;
-    } else if (form.get('price') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập giá');
+    } else if (form.get("price") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập giá");
       return;
-    } else if (Number(form.get('price')) < 0) {
-      (0, _alert.showAlert)('error', 'Giá món ăn phải lớn hoặc bằng hơn 0');
+    } else if (Number(form.get("price")) < 0) {
+      (0, _alert.showAlert)("error", "Giá món ăn phải lớn hoặc bằng hơn 0");
       return;
-    } else if (form.get('imageDish') == 'undefined') {
-      (0, _alert.showAlert)('error', 'Vui lòng chọn hình ảnh');
+    } else if (form.get("imageDish") == "undefined") {
+      (0, _alert.showAlert)("error", "Vui lòng chọn hình ảnh");
       return;
+    } //check ký tự đặc biệt
+
+
+    var specialChars = "!@#$^&%*()+=-[]/{}|:<>?,.";
+
+    for (var i = 0; i <= specialChars.length - 1; i++) {
+      if (form.get("name").includes(specialChars[i])) {
+        (0, _alert.showAlert)("error", "Tên món ăn không được chứa kí tự đặc biệt");
+        return;
+      }
     }
 
     (0, _cudAdminMenu.createNewMenu)(form);
@@ -5737,42 +5746,52 @@ if (btnCreateMenu) {
 
 
 if (btnSaveMenu) {
-  btnSaveMenu.addEventListener('click', function (e) {
+  btnSaveMenu.addEventListener("click", function (e) {
     // nút btn mới có submit
     e.preventDefault();
     var form = new FormData();
-    form.append('name', document.getElementById('name').value);
-    form.append('price', document.getElementById('price').value);
-    form.append('description', document.getElementById('description').value);
-    form.append('imageDish', document.getElementById('imageDish').files[0]);
-    var id = document.getElementById('id').value; // Check data
+    form.append("name", document.getElementById("name").value);
+    form.append("price", document.getElementById("price").value);
+    form.append("description", document.getElementById("description").value);
+    form.append("imageDish", document.getElementById("imageDish").files[0]);
+    var id = document.getElementById("id").value; // Check data
 
-    if (form.get('name') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập tên món ăn');
+    if (form.get("name") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập tên món ăn");
       return;
-    } else if (form.get('price') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập giá');
+    } else if (form.get("price") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập giá");
       return;
-    } else if (Number(form.get('price')) < 0) {
-      (0, _alert.showAlert)('error', 'Giá món ăn phải lớn hoặc bằng hơn 0');
+    } else if (Number(form.get("price")) < 0) {
+      (0, _alert.showAlert)("error", "Giá món ăn phải lớn hoặc bằng hơn 0");
       return;
+    } //check ký tự đăc biệt
+
+
+    var specialChars = "!@#$^&%*()+=-[]/{}|:<>?,.";
+
+    for (var i = 0; i <= specialChars.length - 1; i++) {
+      if (form.get("name").includes(specialChars[i])) {
+        (0, _alert.showAlert)("error", "Tên món ăn không được chứa kí tự đặc biệt");
+        return;
+      }
     }
 
     (0, _cudAdminMenu.updateMenu)(form, id);
   });
-} //Admin delete menu 
+} //Admin delete menu
 
 
 if (btnDeleteMenus) {
   var id_del;
   btnDeleteMenus.forEach(function (btnDel) {
-    btnDel.addEventListener('click', function () {
-      id_del = btnDel.getAttribute('id');
+    btnDel.addEventListener("click", function () {
+      id_del = btnDel.getAttribute("id");
     });
   });
 
   if (btnDeleteMenuConfirm) {
-    btnDeleteMenuConfirm.addEventListener('click', function () {
+    btnDeleteMenuConfirm.addEventListener("click", function () {
       (0, _cudAdminMenu.deleteMenu)(id_del);
     });
   }
@@ -5780,23 +5799,23 @@ if (btnDeleteMenus) {
 
 
 if (formUserOrder) {
-  formUserOrder.addEventListener('submit', function (e) {
+  formUserOrder.addEventListener("submit", function (e) {
     e.preventDefault();
-    var id_user = document.getElementById('id_user').value;
-    var name = document.getElementById('name').value;
-    var phone = document.getElementById('phone').value;
-    var amount = document.getElementById('amount').value;
-    var dateOrder = document.getElementById('dateOrder').value;
-    var show = document.getElementById('show').value;
-    var timeOrder = document.getElementById('timeOrder').value;
-    var timeCome = document.getElementById('timeCome').value;
-    var seat = document.getElementById('id_seat').value; // lấy id của seat
+    var id_user = document.getElementById("id_user").value;
+    var name = document.getElementById("name").value;
+    var phone = document.getElementById("phone").value;
+    var amount = document.getElementById("amount").value;
+    var dateOrder = document.getElementById("dateOrder").value;
+    var show = document.getElementById("show").value;
+    var timeOrder = document.getElementById("timeOrder").value;
+    var timeCome = document.getElementById("timeCome").value;
+    var seat = document.getElementById("id_seat").value; // lấy id của seat
 
-    var seatCusomer = document.getElementById('position').value;
+    var seatCusomer = document.getElementById("position").value;
     var showCusomer = btnSelect.options[btnSelect.selectedIndex].dataset.content;
 
-    if (seat == '') {
-      (0, _alert.showAlert)('error', 'Vui lòng chọn vị trí');
+    if (seat == "") {
+      (0, _alert.showAlert)("error", "Vui lòng chọn vị trí");
       return;
     }
 
@@ -5819,13 +5838,13 @@ if (formUserOrder) {
 if (btnConfirmAgreeOrders) {
   var idOrder;
   btnConfirmAgreeOrders.forEach(function (btnConfirmAgree) {
-    btnConfirmAgree.addEventListener('click', function () {
-      idOrder = btnConfirmAgree.getAttribute('id');
+    btnConfirmAgree.addEventListener("click", function () {
+      idOrder = btnConfirmAgree.getAttribute("id");
     });
   });
 
   if (btnAgreeOrder) {
-    btnAgreeOrder.addEventListener('click', function () {
+    btnAgreeOrder.addEventListener("click", function () {
       (0, _udAdminOrder.agreeOrder)(idOrder);
     });
   }
@@ -5836,13 +5855,13 @@ if (btnConfirmDenyOrders) {
   var _idOrder;
 
   btnConfirmDenyOrders.forEach(function (btnConfirmDeny) {
-    btnConfirmDeny.addEventListener('click', function () {
-      _idOrder = btnConfirmDeny.getAttribute('id');
+    btnConfirmDeny.addEventListener("click", function () {
+      _idOrder = btnConfirmDeny.getAttribute("id");
     });
   });
 
   if (btnDenyOrder) {
-    btnDenyOrder.addEventListener('click', function () {
+    btnDenyOrder.addEventListener("click", function () {
       (0, _udAdminOrder.denyOrder)(_idOrder);
     });
   }
@@ -5853,13 +5872,13 @@ if (btnConfirmDeleteOrders) {
   var _idOrder2;
 
   btnConfirmDeleteOrders.forEach(function (btnConfirmDelete) {
-    btnConfirmDelete.addEventListener('click', function () {
-      _idOrder2 = btnConfirmDelete.getAttribute('id');
+    btnConfirmDelete.addEventListener("click", function () {
+      _idOrder2 = btnConfirmDelete.getAttribute("id");
     });
   });
 
   if (btnDeleteOrder) {
-    btnDeleteOrder.addEventListener('click', function () {
+    btnDeleteOrder.addEventListener("click", function () {
       (0, _udAdminOrder.deleteOrder)(_idOrder2);
     });
   }
@@ -5867,15 +5886,15 @@ if (btnConfirmDeleteOrders) {
 
 
 if (btnCreateShow) {
-  btnCreateShow.addEventListener('click', function (e) {
+  btnCreateShow.addEventListener("click", function (e) {
     e.preventDefault();
     var formShow = new FormData();
-    formShow.append('date', document.getElementById('date').value);
-    formShow.append('day', document.getElementById('day').value);
-    formShow.append('time', document.getElementById('time').value);
-    formShow.append('content', document.getElementById('content-show').value);
-    formShow.append('singer', document.getElementById('singer').value);
-    formShow.append('imageShow', document.getElementById('imageShow').files[0]);
+    formShow.append("date", document.getElementById("date").value);
+    formShow.append("day", document.getElementById("day").value);
+    formShow.append("time", document.getElementById("time").value);
+    formShow.append("content", document.getElementById("content-show").value);
+    formShow.append("singer", document.getElementById("singer").value);
+    formShow.append("imageShow", document.getElementById("imageShow").files[0]);
 
     var _iterator = _createForOfIteratorHelper(formShow),
         _step;
@@ -5884,9 +5903,9 @@ if (btnCreateShow) {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
         var p = _step.value;
 
-        if (p[0] != 'imageShow') {
-          if (p[1].includes('\t')) {
-            formShow.set(p[0], p[1].split('\t')[0]);
+        if (p[0] != "imageShow") {
+          if (p[1].includes("\t")) {
+            formShow.set(p[0], p[1].split("\t")[0]);
           }
         }
       } // Check data
@@ -5897,23 +5916,23 @@ if (btnCreateShow) {
       _iterator.f();
     }
 
-    if (formShow.get('date') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập ngày diễn');
+    if (formShow.get("date") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập ngày diễn");
       return;
-    } else if (formShow.get('day') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập ngày');
+    } else if (formShow.get("day") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập ngày");
       return;
-    } else if (formShow.get('time') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập thời gian');
+    } else if (formShow.get("time") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập thời gian");
       return;
-    } else if (formShow.get('content') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập chủ đề âm nhạc');
+    } else if (formShow.get("content") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập chủ đề âm nhạc");
       return;
-    } else if (formShow.get('singer') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập tên ca sĩ');
+    } else if (formShow.get("singer") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập tên ca sĩ");
       return;
-    } else if (formShow.get('imageShow') == 'undefined') {
-      (0, _alert.showAlert)('error', 'Vui lòng chọn hình ảnh');
+    } else if (formShow.get("imageShow") == "undefined") {
+      (0, _alert.showAlert)("error", "Vui lòng chọn hình ảnh");
       return;
     }
 
@@ -5923,16 +5942,17 @@ if (btnCreateShow) {
 
 
 if (btnSaveShow) {
-  btnSaveShow.addEventListener('click', function (e) {
+  btnSaveShow.addEventListener("click", function (e) {
     // nút btn mới có submit
     e.preventDefault();
     var formShow = new FormData();
-    formShow.append('date', document.getElementById('date').value);
-    formShow.append('day', document.getElementById('day').value);
-    formShow.append('content', document.getElementById('content-show').value);
-    formShow.append('singer', document.getElementById('singer').value);
-    formShow.append('imageShow', document.getElementById('imageShow').files[0]);
-    var id = document.getElementById('id').value;
+    formShow.append("date", document.getElementById("date").value);
+    formShow.append("day", document.getElementById("day").value);
+    formShow.append("content", document.getElementById("content-show").value);
+    formShow.append("time", document.getElementById("time").value);
+    formShow.append("singer", document.getElementById("singer").value);
+    formShow.append("imageShow", document.getElementById("imageShow").files[0]);
+    var id = document.getElementById("id").value;
 
     var _iterator2 = _createForOfIteratorHelper(formShow),
         _step2;
@@ -5941,9 +5961,9 @@ if (btnSaveShow) {
       for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
         var p = _step2.value;
 
-        if (p[0] != 'imageShow') {
-          if (p[1].includes('\t')) {
-            formShow.set(p[0], p[1].split('\t')[0]);
+        if (p[0] != "imageShow") {
+          if (p[1].includes("\t")) {
+            formShow.set(p[0], p[1].split("\t")[0]);
           }
         }
       } // Check data
@@ -5954,35 +5974,35 @@ if (btnSaveShow) {
       _iterator2.f();
     }
 
-    if (formShow.get('date') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập ngày diễn');
+    if (formShow.get("date") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập ngày diễn");
       return;
-    } else if (formShow.get('day') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập ngày');
+    } else if (formShow.get("day") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập ngày");
       return;
-    } else if (formShow.get('content') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập chủ đề âm nhạc');
+    } else if (formShow.get("content") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập chủ đề âm nhạc");
       return;
-    } else if (formShow.get('singer') === '') {
-      (0, _alert.showAlert)('error', 'Vui lòng nhập tên ca sĩ');
+    } else if (formShow.get("singer") === "") {
+      (0, _alert.showAlert)("error", "Vui lòng nhập tên ca sĩ");
       return;
     }
 
     (0, _cudAdminShow.updateShow)(formShow, id);
   });
-} //Admin delete show 
+} //Admin delete show
 
 
 if (btnDeleteShows) {
   var id_del_show;
   btnDeleteShows.forEach(function (btnDel) {
-    btnDel.addEventListener('click', function () {
-      id_del_show = btnDel.getAttribute('id');
+    btnDel.addEventListener("click", function () {
+      id_del_show = btnDel.getAttribute("id");
     });
   });
 
   if (btnDeleteShowConfirm) {
-    btnDeleteShowConfirm.addEventListener('click', function () {
+    btnDeleteShowConfirm.addEventListener("click", function () {
       (0, _cudAdminShow.deleteShow)(id_del_show);
     });
   }
@@ -5990,27 +6010,27 @@ if (btnDeleteShows) {
 
 
 if (btnSelect) {
-  btnSelect.addEventListener('change', function (e) {
+  btnSelect.addEventListener("change", function (e) {
     var date = btnSelect.options[btnSelect.selectedIndex].dataset.date;
     var time = btnSelect.options[btnSelect.selectedIndex].dataset.time;
     var nameShow = btnSelect.options[btnSelect.selectedIndex].innerHTML;
 
     if (!date) {
       // có nghĩa là select show trong form order là *Chọn Show Diễn
-      document.getElementById('dateOrder').value = '';
-      document.getElementById('timeOrder').value = '';
-      document.getElementById('name-show-for-position').innerHTML = 'Vui lòng chọn show để xem';
+      document.getElementById("dateOrder").value = "";
+      document.getElementById("timeOrder").value = "";
+      document.getElementById("name-show-for-position").innerHTML = "Vui lòng chọn show để xem";
 
-      var _arrMapSeat = document.querySelectorAll('.row-seat');
+      var _arrMapSeat = document.querySelectorAll(".row-seat");
 
       _arrMapSeat.forEach(function (el) {
-        el.classList.add('hidden');
+        el.classList.add("hidden");
       });
 
       return;
     }
 
-    var arrayDate = date.split('/');
+    var arrayDate = date.split("/");
 
     if (arrayDate[0] < 10) {
       arrayDate[0] = "0".concat(arrayDate[0]);
@@ -6021,16 +6041,16 @@ if (btnSelect) {
     }
 
     var dateTranfer = "".concat(arrayDate[2], "-").concat(arrayDate[1], "-").concat(arrayDate[0]);
-    document.getElementById('dateOrder').value = dateTranfer;
-    document.getElementById('timeOrder').value = time;
-    document.getElementById('name-show-for-position').innerHTML = "<h3>".concat(nameShow, "</h3>"); //thay đổi map seat khi lựa chọn trong lịch diễn của form order
+    document.getElementById("dateOrder").value = dateTranfer;
+    document.getElementById("timeOrder").value = time;
+    document.getElementById("name-show-for-position").innerHTML = "<h3>".concat(nameShow, "</h3>"); //thay đổi map seat khi lựa chọn trong lịch diễn của form order
 
-    var arrMapSeat = document.querySelectorAll('.row-seat');
+    var arrMapSeat = document.querySelectorAll(".row-seat");
     arrMapSeat.forEach(function (el) {
       if (el.id == btnSelect.value) {
-        el.classList.remove('hidden');
+        el.classList.remove("hidden");
       } else {
-        el.classList.add('hidden');
+        el.classList.add("hidden");
       }
     });
   });
@@ -6038,8 +6058,8 @@ if (btnSelect) {
 
 
 if (dateShow) {
-  dateShow.addEventListener('change', function () {
-    var day_name = '';
+  dateShow.addEventListener("change", function () {
+    var day_name = "";
     var dateShowChosen = new Date(dateShow.value);
     var current_day = dateShowChosen.getDay();
 
@@ -6072,30 +6092,29 @@ if (dateShow) {
         day_name = "Thứ Bảy";
     }
 
-    ;
-    document.getElementById('day').value = day_name;
+    document.getElementById("day").value = day_name;
   });
 } //hiển thị màu vị trí khi chọn và lấy vị trí bàn điền vào form order
 
 
 if (seats) {
   seats.forEach(function (seat, index, arr) {
-    seat.addEventListener('click', function (e) {
+    seat.addEventListener("click", function (e) {
       var idseat = seat.dataset.idseat; //
 
-      if (document.querySelector('.forPosition')) {
+      if (document.querySelector(".forPosition")) {
         if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
           if (!e.target.classList.contains("selected")) {
             arr.forEach(function (el) {
               el.classList.remove("selected");
             });
             e.target.classList.add("selected");
-            document.getElementById('position').value = e.target.innerHTML;
-            document.getElementById('id_seat').value = idseat;
+            document.getElementById("position").value = e.target.innerHTML;
+            document.getElementById("id_seat").value = idseat;
           } else if (e.target.classList.contains("selected")) {
             e.target.classList.remove("selected");
-            document.getElementById('position').value = '';
-            document.getElementById('id_seat').value = '';
+            document.getElementById("position").value = "";
+            document.getElementById("id_seat").value = "";
           }
         }
       } //
@@ -6108,12 +6127,12 @@ if (seats) {
 if (btnOrderShows.length > 0) {
   // btnOrderShows.length > 0 có nghĩa user đã đăng nhập, => nodelist > 0
   btnOrderShows.forEach(function (btnOrderShow) {
-    btnOrderShow.addEventListener('click', function (e) {
+    btnOrderShow.addEventListener("click", function (e) {
       var idShow = btnOrderShow.dataset.id;
       var timeShow = btnOrderShow.dataset.time;
       var dateShow = btnOrderShow.dataset.date;
       var contentShow = btnOrderShow.dataset.content;
-      var arrayDateShow = dateShow.split('/');
+      var arrayDateShow = dateShow.split("/");
 
       if (arrayDateShow[0] < 10) {
         arrayDateShow[0] = "0".concat(arrayDateShow[0]);
@@ -6124,17 +6143,17 @@ if (btnOrderShows.length > 0) {
       }
 
       var dateShowTranfer = "".concat(arrayDateShow[2], "-").concat(arrayDateShow[1], "-").concat(arrayDateShow[0]);
-      document.getElementById('show').value = idShow;
-      document.getElementById('timeOrder').value = timeShow;
-      document.getElementById('dateOrder').value = dateShowTranfer;
-      document.getElementById('name-show-for-position').innerHTML = "<h3>".concat(contentShow, "</h3>"); //khi click đặt bàn trong section lịch diễn thì map seat thay đổi
+      document.getElementById("show").value = idShow;
+      document.getElementById("timeOrder").value = timeShow;
+      document.getElementById("dateOrder").value = dateShowTranfer;
+      document.getElementById("name-show-for-position").innerHTML = "<h3>".concat(contentShow, "</h3>"); //khi click đặt bàn trong section lịch diễn thì map seat thay đổi
 
-      var arrMapSeat = document.querySelectorAll('.row-seat');
+      var arrMapSeat = document.querySelectorAll(".row-seat");
       arrMapSeat.forEach(function (el) {
         if (el.id == idShow) {
-          el.classList.remove('hidden');
+          el.classList.remove("hidden");
         } else {
-          el.classList.add('hidden');
+          el.classList.add("hidden");
         }
       }); //test
       // getUserByID('6353a4aab81802acd65c246b') // return ra promise
@@ -6150,7 +6169,7 @@ if (btnOrderShows.length > 0) {
 var arrIdByCheck = []; // biến global cho check
 
 if (btnCheckAllOrder) {
-  btnCheckAllOrder.addEventListener('click', function (e) {
+  btnCheckAllOrder.addEventListener("click", function (e) {
     if (btnCheckAllOrder.checked) {
       //nếu check all thì button enable
       btnForMany.disabled = false;
@@ -6169,14 +6188,13 @@ if (btnCheckAllOrder) {
       });
     }
 
-    ;
     console.log(arrIdByCheck);
   });
 }
 
 if (btnCheckOrders) {
   _toConsumableArray(btnCheckOrders).forEach(function (btnCheckOrder) {
-    btnCheckOrder.addEventListener('click', function (e) {
+    btnCheckOrder.addEventListener("click", function (e) {
       //kiểm tra có tất cả có check ko, nếu có btnCheckAll = true, không thì btnCheckAll = false
       var isAllChecked = _toConsumableArray(btnCheckOrders).every(function (el) {
         return el.checked == true;
@@ -6197,7 +6215,6 @@ if (btnCheckOrders) {
         arrIdByCheck.splice(+deleteArr, 1);
       }
 
-      ;
       console.log(arrIdByCheck);
 
       var someChecked = _toConsumableArray(btnCheckOrders).some(function (el) {
@@ -6216,12 +6233,12 @@ if (btnCheckOrders) {
 }
 
 if (btnConfirmForMany) {
-  btnConfirmForMany.addEventListener('click', function (e) {
+  btnConfirmForMany.addEventListener("click", function (e) {
     var arrIdByCheckForSubmit = arrIdByCheck;
-    var selectActionMany = document.getElementById('select-action-many').value;
+    var selectActionMany = document.getElementById("select-action-many").value;
 
     if (selectActionMany == 0) {
-      (0, _alert.showAlert)('error', 'Vui lòng chọn hành động');
+      (0, _alert.showAlert)("error", "Vui lòng chọn hành động");
       return;
     } else if (selectActionMany == 1) {
       (0, _udAdminOrder.agreeManyOrder)(arrIdByCheckForSubmit);
@@ -6260,7 +6277,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52156" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61190" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

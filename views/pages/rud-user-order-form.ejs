@@ -126,8 +126,8 @@
                       <td style="text-align: center;"><%= order.name%></td>
                       <td style="text-align: center;"><%= order.phone%></td>
                       <td style="text-align: center;"><%= order.show.content%></td>
-                      <td style="text-align: center;"><%= order.dateOrder.toLocaleString('zh-HK',{day:'numeric',month: 'numeric',year: 'numeric'})%></td>
-                      <td style="text-align: center;"><%= order.timeOrder%></td>
+                      <td style="text-align: center;"><%= order.show.date.toLocaleString('zh-HK',{day:'numeric',month: 'numeric',year: 'numeric'})%></td>
+                      <td style="text-align: center;"><%= order.show.time%></td>
                       <td style="text-align: center;"><%= order.timeCome%></td>
                       <td style="text-align: center;"><%= order.amount%></td>
                       <td style="text-align: center;"><%= order.seat.name%></td>
@@ -168,13 +168,13 @@
         </div>
       </div>
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+      <!-- <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; Your Website 2021</span>
           </div>
         </div>
-      </footer>
+      </footer> -->
       <!-- End of Footer -->
 
       <!-- End of Content Wrapper -->
