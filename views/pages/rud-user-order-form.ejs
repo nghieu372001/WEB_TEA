@@ -127,7 +127,7 @@
                       <td style="text-align: center;"><%= order.phone%></td>
                       <td style="text-align: center;"><%= order.show.content%></td>
                       <td style="text-align: center;"><%= order.show.date.toLocaleString('zh-HK',{day:'numeric',month: 'numeric',year: 'numeric'})%></td>
-                      <td style="text-align: center;"><%= order.show.time%></td>
+                      <td style="text-align: center;"><%= ((+order.show.time.split(":")[0] % 24) % 12 || 12) +":"+order.show.time.split(":")[1]+(+order.show.time.split(":")[0] % 24 < 12 ? "AM" : "PM")%></td>
                       <td style="text-align: center;"><%= order.timeCome%></td>
                       <td style="text-align: center;"><%= order.amount%></td>
                       <td style="text-align: center;"><%= order.seat.name%></td>

@@ -110,7 +110,11 @@
             <td><%= orderUser.timeCome%></td>
             <td><%= orderUser.amount%></td>
             <td><%= orderUser.show.content%></td>
-            <td><%= orderUser.show.time%></td>
+            <td>
+              <%= ((+orderUser.show.time.split(":")[0] % 24) % 12 || 12) +":"
+              +orderUser.show.time.split(":")[1]
+              +(+orderUser.show.time.split(":")[0] % 24 < 12 ? "AM" : "PM")%>
+            </td>
             <td><%= orderUser.seat.name%></td>
             <td><%= orderUser.status%></td>
           </tr>
@@ -155,7 +159,6 @@
       </div>
     </section>
     <!-- footer section ends -->
-
     <script src="/js/bundle.js"></script>
   </body>
 </html>
