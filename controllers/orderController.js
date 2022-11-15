@@ -11,7 +11,7 @@ function array_is_unique(array, size) {
     for (let j = i + 1; j < size; ++j) {
       if (
         array[i].show.content == array[j].show.content &&
-        array[i].seat.name == array[j].set.name
+        array[i].seat.name == array[j].seat.name
       ) {
         /*Tìm thấy 1 phần tử trùng là đủ và dừng vòng lặp*/
         flag = 1;
@@ -19,6 +19,7 @@ function array_is_unique(array, size) {
       }
     }
   }
+  console.log(flag);
 
   return flag;
 }
