@@ -4964,7 +4964,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var fs = require('fs');
+var fs = require("fs");
 
 var createNewShow = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(data) {
@@ -4976,18 +4976,18 @@ var createNewShow = /*#__PURE__*/function () {
             _context.prev = 0;
             _context.next = 3;
             return (0, _axios.default)({
-              method: 'POST',
-              url: '/api/v1/shows',
+              method: "POST",
+              url: "/api/v1/shows",
               data: data
             });
 
           case 3:
             res = _context.sent;
 
-            if (res.data.status === 'success') {
-              (0, _alert.showAlert)('success', 'Thêm lịch diễn thành công');
+            if (res.data.status === "success") {
+              (0, _alert.showAlert)("success", "Thêm lịch diễn thành công");
               window.setTimeout(function () {
-                location.assign('/crud-show-form');
+                location.assign("/crud-show-form");
               }, 1500);
             }
 
@@ -4998,10 +4998,10 @@ var createNewShow = /*#__PURE__*/function () {
             _context.prev = 7;
             _context.t0 = _context["catch"](0);
 
-            if (_context.t0.response.data.message.includes('tea-room-app.shows index: date_1_content_1 dup key')) {
-              (0, _alert.showAlert)('error', 'Ngày diễn và chủ đề âm nhạc đã tồn tại!');
+            if (_context.t0.response.data.message.includes("tea-room-app.shows index: date_1_content_1 dup key")) {
+              (0, _alert.showAlert)("error", "Ngày diễn và chủ đề âm nhạc đã tồn tại!");
             } else {
-              (0, _alert.showAlert)('error', _context.t0.response.data.message);
+              (0, _alert.showAlert)("error", _context.t0.response.data.message);
             }
 
           case 10:
@@ -5029,7 +5029,7 @@ var updateShow = /*#__PURE__*/function () {
             _context2.prev = 0;
             _context2.next = 3;
             return (0, _axios.default)({
-              method: 'PATCH',
+              method: "PATCH",
               url: "/api/v1/shows/".concat(id),
               data: data //data send with request(gửi lên url)
 
@@ -5038,10 +5038,10 @@ var updateShow = /*#__PURE__*/function () {
           case 3:
             res = _context2.sent;
 
-            if (res.data.status === 'success') {
-              (0, _alert.showAlert)('success', 'Cập nhật lịch diễn thành công');
+            if (res.data.status === "success") {
+              (0, _alert.showAlert)("success", "Cập nhật lịch diễn thành công");
               window.setTimeout(function () {
-                location.assign('/crud-show-form');
+                location.assign("/crud-show-form");
               }, 1500);
             }
 
@@ -5053,10 +5053,10 @@ var updateShow = /*#__PURE__*/function () {
             _context2.t0 = _context2["catch"](0);
             console.log(_context2.t0);
 
-            if (_context2.t0.response.data.message.includes('tea-room-app.shows index: date_1_content_1 dup key')) {
-              (0, _alert.showAlert)('error', 'Ngày diễn và chủ đề âm nhạc đã tồn tại!');
+            if (_context2.t0.response.data.message.includes("tea-room-app.shows index: date_1_content_1 dup key")) {
+              (0, _alert.showAlert)("error", "Ngày diễn và chủ đề âm nhạc đã tồn tại!");
             } else {
-              (0, _alert.showAlert)('error', _context2.t0.response.data.message);
+              (0, _alert.showAlert)("error", _context2.t0.response.data.message);
             }
 
           case 11:
@@ -5084,17 +5084,17 @@ var deleteShow = /*#__PURE__*/function () {
             _context3.prev = 0;
             _context3.next = 3;
             return (0, _axios.default)({
-              method: 'DELETE',
-              url: "http://127.0.0.1:8080/api/v1/shows/".concat(id)
+              method: "DELETE",
+              url: "/api/v1/shows/".concat(id)
             });
 
           case 3:
             res = _context3.sent;
 
-            if (res.status == '204') {
-              (0, _alert.showAlert)('success', 'Xóa lịch diễn thành công');
+            if (res.status == "204") {
+              (0, _alert.showAlert)("success", "Xóa lịch diễn thành công");
               window.setTimeout(function () {
-                location.assign('/crud-show-form');
+                location.assign("/crud-show-form");
               }, 1500);
             }
 
@@ -5104,7 +5104,7 @@ var deleteShow = /*#__PURE__*/function () {
           case 7:
             _context3.prev = 7;
             _context3.t0 = _context3["catch"](0);
-            (0, _alert.showAlert)('error', _context3.t0.response.data.message);
+            (0, _alert.showAlert)("error", _context3.t0.response.data.message);
 
           case 10:
           case "end":
@@ -6277,7 +6277,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51022" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64540" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
